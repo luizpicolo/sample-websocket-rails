@@ -1,0 +1,11 @@
+<h1>Food List </h1>
+<% @products.each do |product| %>
+<% product.analytics_view_in_home %>
+  <%= link_to show_product_path(product.id), class: 'visualization', data: {id: product.id} do %>
+    <div>
+      <h1><%= product.name %></h1>
+      <%= image_tag "http://lorempixel.com/200/200/food/#{product.id}/" %>
+      <p><%= product.price %></p>
+    </div>
+  <% end %>
+<% end %>

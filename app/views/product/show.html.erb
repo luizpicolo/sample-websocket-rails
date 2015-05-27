@@ -1,0 +1,5 @@
+<h1> <%= @product.name %> </h1>
+<% @product.analytics_view_click %>
+<%= image_tag "http://lorempixel.com/400/300/food/#{@product.id}/" %>
+<h2><%= @product.price %></h2>
+<%= link_to "Voltar", root_path, class: "btn btn-primary" %>

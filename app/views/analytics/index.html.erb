@@ -1,0 +1,11 @@
+<h1>Analytics</h1>
+<% @products.each do |product| %>
+  <%= link_to '#' do %>
+    <div id="product_<%= product.id %>" data-product="product_<%= product.id %>">
+      <h1><%= product.name %></h1>
+      <%= image_tag "http://lorempixel.com/200/200/food/#{product.id}/" %>
+      <p>Visualizado na  home: <%= product.analytics_show_by_id("view_in_home_#{product.id}") || 0 %></p>
+      <p>Clicado: <%= product.analytics_show_by_id("view_click_#{product.id}") || 0 %></p>
+    </div>
+  <% end %>
+<% end %>
